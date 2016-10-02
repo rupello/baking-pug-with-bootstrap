@@ -1,0 +1,24 @@
+
+//- page-a.pug
+extends layout.pug
+  
+block content
+          
+  +panel("Some Buttons")  
+    p
+      +button("success", "success.html", "large") Success
+    p
+      +button("info", "info.html", "small") Info
+    p
+      +button("warning", "warning.html", "mini") Warning
+      
+  +panel("Alerts")
+    +alert("warning") Warning! Warning!
+    +alert("danger") Danger Will Robinson!
+    +alert("success") You succeeded :-)
+    +alert("info") Some information for you
+    
+
+
+  
+  
