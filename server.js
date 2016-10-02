@@ -8,16 +8,12 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  // todo pass in theme name as a request
-  res.render('index', { title: 'Hey', message: 'Hello there!', mytheme:"superhero"});
+  res.render("index", { title: 'Hey', message: 'Hello there!'});
 });
 
-app.get('/buttons', function (req, res) {
-  res.render('buttons');
-});
-
-app.get('/lists', function (req, res) {
-  res.render('lists');
+app.get('/*ex', function (req, res) {
+  console.log(req.params);
+  res.render(req.params[0]+"ex", { title: 'Hey', message: 'Hello there!'});
 });
 
 // listen for requests :)
